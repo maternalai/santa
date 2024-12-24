@@ -1,0 +1,32 @@
+.pixel-header {
+  background: var(--pixel-black);
+  border-bottom: 4px solid var(--pixel-red);
+  padding: 16px 0;
+  position: relative;
+}
+
+.pixel-logo {
+  font-family: var(--font-pixel);
+  font-size: 24px;
+  color: var(--pixel-gold);
+  text-decoration: none;
+  text-shadow: 4px 4px 0 var(--pixel-red);
+}
+
+.pixel-nav {
+  display: flex;
+  gap: 24px;
+}
+
+.pixel-nav-item {
+  font-family: var(--font-pixel);
+  font-size: 14px;
+  color: var(--pixel-white);
+  text-decoration: none;
+  transition: all 0.2s steps(2);
+}
+
+.pixel-nav-item:hover {
+  color: var(--pixel-gold);
+  transform: translateY(-2px);
+} 

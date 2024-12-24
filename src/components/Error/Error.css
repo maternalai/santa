@@ -1,0 +1,90 @@
+.pixel-error {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--pixel-black);
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.error-container {
+  text-align: center;
+  padding: 48px;
+  background: var(--pixel-black);
+  border: 4px solid var(--pixel-red);
+  position: relative;
+  max-width: 500px;
+  width: 100%;
+}
+
+.error-icon {
+  font-size: 64px;
+  margin-bottom: 24px;
+  animation: shake 0.5s steps(2) infinite;
+}
+
+.error-title {
+  font-family: var(--font-pixel);
+  color: var(--pixel-red);
+  font-size: 2rem;
+  margin-bottom: 16px;
+  text-shadow: 4px 4px 0 rgba(0, 0, 0, 0.5);
+}
+
+.error-message {
+  font-family: var(--font-pixel-secondary);
+  color: var(--pixel-white);
+  font-size: 1.2rem;
+  margin-bottom: 32px;
+  line-height: 1.4;
+}
+
+.error-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.retry-text {
+  font-family: var(--font-pixel);
+  color: var(--pixel-gold);
+  font-size: 0.8rem;
+  animation: blink 1s steps(2) infinite;
+}
+
+.retry-btn {
+  background: var(--pixel-green);
+  padding: 16px 32px;
+}
+
+.pixel-decoration-top,
+.pixel-decoration-bottom {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background: repeating-linear-gradient(
+    45deg,
+    var(--pixel-red) 0,
+    var(--pixel-red) 8px,
+    transparent 8px,
+    transparent 16px
+  );
+}
+
+.pixel-decoration-top {
+  top: 0;
+}
+
+.pixel-decoration-bottom {
+  bottom: 0;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  75% { transform: translateX(4px); }
+} 

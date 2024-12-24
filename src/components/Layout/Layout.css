@@ -1,0 +1,21 @@
+.app-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--pixel-black);
+  position: relative;
+  overflow: hidden;
+}
+
+.main-content {
+  flex: 1;
+  padding: var(--section-spacing) 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* Ensure proper stacking of effects */
+.app-layout > * {
+  position: relative;
+  z-index: 1;
+} 

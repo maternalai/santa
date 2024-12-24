@@ -1,0 +1,66 @@
+.glitch-effect {
+  position: relative;
+  display: inline-block;
+}
+
+.glitch-text {
+  position: relative;
+}
+
+.glitch-text.before,
+.glitch-text.after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  clip: rect(0, 0, 0, 0);
+}
+
+.glitch-effect.low .glitch-text.before {
+  animation: glitch-before-low 2s infinite;
+  text-shadow: 2px 0 var(--pixel-red);
+}
+
+.glitch-effect.low .glitch-text.after {
+  animation: glitch-after-low 3s infinite;
+  text-shadow: -2px 0 var(--pixel-blue);
+}
+
+.glitch-effect.medium .glitch-text.before {
+  animation: glitch-before-medium 1s infinite;
+  text-shadow: 3px 0 var(--pixel-red);
+}
+
+.glitch-effect.medium .glitch-text.after {
+  animation: glitch-after-medium 1.5s infinite;
+  text-shadow: -3px 0 var(--pixel-blue);
+}
+
+.glitch-effect.high .glitch-text.before {
+  animation: glitch-before-high 0.5s infinite;
+  text-shadow: 4px 0 var(--pixel-red);
+}
+
+.glitch-effect.high .glitch-text.after {
+  animation: glitch-after-high 0.7s infinite;
+  text-shadow: -4px 0 var(--pixel-blue);
+}
+
+@keyframes glitch-before-low {
+  0% { clip: rect(0, 0, 0, 0); }
+  2% { clip: rect(10px, 999px, 15px, 0); }
+  4% { clip: rect(0, 0, 0, 0); }
+  6% { clip: rect(20px, 999px, 25px, 0); }
+  8% { clip: rect(0, 0, 0, 0); }
+}
+
+@keyframes glitch-after-low {
+  0% { clip: rect(0, 0, 0, 0); }
+  1% { clip: rect(5px, 999px, 10px, 0); }
+  2% { clip: rect(0, 0, 0, 0); }
+  3% { clip: rect(15px, 999px, 20px, 0); }
+  4% { clip: rect(0, 0, 0, 0); }
+}
+
+/* Medium and High intensity keyframes follow similar patterns with faster timing */ 

@@ -1,0 +1,111 @@
+:root {
+  --pixel-red: #ff004d;
+  --pixel-green: #00b543;
+  --pixel-gold: #ffcc00;
+  --pixel-white: #ffffff;
+  --pixel-black: #1a1a1a;
+  --pixel-snow: #d4f1f9;
+}
+
+.pixel-footer {
+  background: var(--pixel-black);
+  border-top: 4px solid var(--pixel-red);
+  padding: 48px 0 24px;
+  position: relative;
+}
+
+.pixel-footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background: repeating-linear-gradient(
+    45deg,
+    var(--pixel-red) 0,
+    var(--pixel-red) 10px,
+    var(--pixel-green) 10px,
+    var(--pixel-green) 20px
+  );
+}
+
+.pixel-footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 32px;
+  margin-bottom: 48px;
+}
+
+.pixel-footer-section h3 {
+  font-family: var(--font-pixel);
+  font-size: 18px;
+  color: var(--pixel-gold);
+  margin-bottom: 16px;
+  text-shadow: 2px 2px 0 var(--pixel-black);
+}
+
+.pixel-footer-section p {
+  font-family: var(--font-pixel-secondary);
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--pixel-white);
+}
+
+.pixel-footer-links {
+  list-style: none;
+  padding: 0;
+}
+
+.pixel-footer-links li {
+  margin-bottom: 8px;
+}
+
+.pixel-footer-links a {
+  font-family: var(--font-pixel-secondary);
+  color: var(--pixel-white);
+  text-decoration: none;
+  transition: all 0.2s steps(2);
+}
+
+.pixel-footer-links a:hover {
+  color: var(--pixel-gold);
+  transform: translateX(4px);
+  display: inline-block;
+}
+
+.pixel-social-icons {
+  display: flex;
+  gap: 16px;
+}
+
+.pixel-social-icon {
+  font-size: 24px;
+  color: var(--pixel-white);
+  text-decoration: none;
+  transition: all 0.2s steps(2);
+}
+
+.pixel-social-icon:hover {
+  transform: translateY(-4px);
+}
+
+.pixel-footer-bottom {
+  border-top: 2px solid var(--pixel-red);
+  padding-top: 24px;
+  text-align: center;
+  font-family: var(--font-pixel-secondary);
+  font-size: 14px;
+  color: var(--pixel-white);
+}
+
+@media (max-width: 768px) {
+  .pixel-footer-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .pixel-social-icons {
+    justify-content: center;
+  }
+} 

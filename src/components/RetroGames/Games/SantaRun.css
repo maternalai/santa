@@ -1,0 +1,196 @@
+.santa-run-game {
+  width: 800px;
+  height: 400px;
+  position: relative;
+  overflow: hidden;
+  background: var(--pixel-black);
+  border: 4px solid var(--pixel-white);
+  touch-action: none;
+  user-select: none;
+}
+
+.game-area {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  touch-action: none;
+}
+
+.santa {
+  position: absolute;
+  left: 50px;
+  font-size: 40px;
+  transition: transform 0.1s linear;
+  transform-origin: center;
+}
+
+.santa.jumping {
+  animation: santaJump 0.5s linear;
+}
+
+.obstacle {
+  position: absolute;
+  bottom: 60px;
+  font-size: 40px;
+}
+
+.ground {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  background: repeating-linear-gradient(
+    to right,
+    var(--pixel-white) 0px,
+    var(--pixel-white) 50px,
+    var(--pixel-blue) 50px,
+    var(--pixel-blue) 100px
+  );
+  animation: groundScroll 2s linear infinite;
+}
+
+.game-score {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-family: var(--font-pixel);
+  font-size: 24px;
+  color: var(--pixel-gold);
+  text-shadow: 2px 2px 0 var(--pixel-red);
+}
+
+.game-start-overlay,
+.game-over-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.8);
+  color: var(--pixel-white);
+  font-family: var(--font-pixel);
+}
+
+.game-start-overlay h2,
+.game-over-overlay h2 {
+  font-size: 32px;
+  color: var(--pixel-gold);
+  margin-bottom: 20px;
+  text-shadow: 3px 3px 0 var(--pixel-red);
+}
+
+.pixel-santa-idle {
+  font-size: 64px;
+  margin: 20px 0;
+  animation: santaIdle 1s steps(2) infinite;
+}
+
+.retry-btn {
+  font-family: var(--font-pixel);
+  font-size: 20px;
+  padding: 10px 20px;
+  margin-top: 20px;
+  background: var(--pixel-red);
+  border: none;
+  color: var(--pixel-white);
+  cursor: pointer;
+  position: relative;
+}
+
+.retry-btn::before {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  right: -4px;
+  bottom: -4px;
+  background: var(--pixel-black);
+  z-index: -1;
+}
+
+.retry-btn:hover {
+  transform: translate(-2px, -2px);
+}
+
+@keyframes santaJump {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(10deg); }
+}
+
+@keyframes santaIdle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+@keyframes groundScroll {
+  from { background-position: 0 0; }
+  to { background-position: -100px 0; }
+}
+
+@media (max-width: 840px) {
+  .santa-run-game {
+    width: 100%;
+    height: 300px;
+  }
+
+  .santa,
+  .obstacle {
+    font-size: 30px;
+  }
+
+  .game-score {
+    font-size: 18px;
+  }
+}
+
+.mobile-controls {
+  display: none;
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.jump-btn {
+  font-family: var(--font-pixel);
+  padding: 10px 20px;
+  background: var(--pixel-red);
+  color: var(--pixel-white);
+  border: none;
+  opacity: 0.7;
+  touch-action: manipulation;
+}
+
+@media (max-width: 840px) {
+  .mobile-controls {
+    display: block;
+  }
+}
+
+.score-display {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.score-display p {
+  margin: 10px 0;
+  font-size: 24px;
+  color: var(--pixel-white);
+}
+
+.score-display .high-score {
+  color: var(--pixel-gold);
+  text-shadow: 2px 2px 0 var(--pixel-red);
+}
+
+.game-stats {
+  font-family: var(--font-pixel);
+  font-size: 20px;
+  color: var(--pixel-gold);
+  text-shadow: 2px 2px 0 var(--pixel-red);
+} 

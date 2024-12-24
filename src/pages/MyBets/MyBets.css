@@ -1,0 +1,111 @@
+.mybets-page {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.mybets-header {
+  margin-bottom: 2rem;
+}
+
+.mybets-header h2 {
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.bet-filters {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.bet-filter {
+  padding: 0.5rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.bet-filter.active {
+  background: #00ff88;
+  border-color: #00cc6a;
+  color: #1a1a1a;
+}
+
+.bets-container {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.bet-card {
+  background: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  border-left: 4px solid #ddd;
+}
+
+.bet-card.active {
+  border-left-color: #00ff88;
+}
+
+.bet-card.won {
+  border-left-color: #00ff88;
+}
+
+.bet-card.lost {
+  border-left-color: #ff3e3e;
+}
+
+.bet-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.bet-status {
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+}
+
+.active .bet-status {
+  background: #e6fff2;
+  color: #00cc6a;
+}
+
+.won .bet-status {
+  background: #e6fff2;
+  color: #00cc6a;
+}
+
+.lost .bet-status {
+  background: #ffe6e6;
+  color: #ff3e3e;
+}
+
+.bet-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.bet-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.bet-info label {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.bet-info span {
+  font-weight: 500;
+} 

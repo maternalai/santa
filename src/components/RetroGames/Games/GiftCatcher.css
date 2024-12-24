@@ -1,0 +1,176 @@
+.gift-catcher-game {
+  width: 800px;
+  height: 400px;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(to bottom, #1a2980 0%, #26d0ce 100%);
+  border: 4px solid var(--pixel-white);
+}
+
+.game-area {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/* Game Elements */
+.catcher-bag {
+  position: absolute;
+  bottom: 20px;
+  width: 60px;
+  height: 60px;
+  font-size: 40px;
+  text-align: center;
+  transition: left 0.1s linear;
+  z-index: 2;
+}
+
+.falling-gift {
+  position: absolute;
+  font-size: 30px;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  animation: giftSpin 1s linear infinite;
+  z-index: 1;
+}
+
+/* Game Stats */
+.game-stats {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  font-family: var(--font-pixel);
+  color: var(--pixel-white);
+  z-index: 3;
+}
+
+.lives {
+  letter-spacing: 5px;
+}
+
+.score {
+  color: var(--pixel-gold);
+  text-shadow: 2px 2px 0 var(--pixel-black);
+}
+
+/* Overlays */
+.game-start-overlay,
+.game-over-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.8);
+  color: var(--pixel-white);
+  font-family: var(--font-pixel);
+  z-index: 10;
+}
+
+/* Control Settings */
+.control-settings {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px 0;
+}
+
+.control-option {
+  margin-bottom: 15px;
+}
+
+.control-option label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.sensitivity-slider {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sensitivity-slider label {
+  text-align: center;
+  color: var(--pixel-gold);
+}
+
+.sensitivity-slider input[type="range"] {
+  width: 200px;
+}
+
+/* Buttons */
+.start-btn,
+.retry-btn {
+  font-family: var(--font-pixel);
+  font-size: 20px;
+  padding: 10px 20px;
+  margin-top: 20px;
+  background: var(--pixel-red);
+  border: none;
+  color: var(--pixel-white);
+  cursor: pointer;
+  position: relative;
+}
+
+.start-btn::before,
+.retry-btn::before {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  right: -4px;
+  bottom: -4px;
+  background: var(--pixel-black);
+  z-index: -1;
+}
+
+.start-btn:hover,
+.retry-btn:hover {
+  transform: translate(-2px, -2px);
+}
+
+/* Animations */
+@keyframes giftSpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 840px) {
+  .gift-catcher-game {
+    width: 100%;
+    height: 300px;
+  }
+
+  .catcher-bag {
+    font-size: 30px;
+  }
+
+  .falling-gift {
+    font-size: 24px;
+  }
+
+  .game-stats {
+    font-size: 14px;
+  }
+
+  .control-settings {
+    padding: 15px;
+  }
+
+  .sensitivity-slider input[type="range"] {
+    width: 150px;
+  }
+} 

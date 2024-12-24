@@ -1,0 +1,106 @@
+.pixel-decorations {
+  padding: 48px 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.pixel-title {
+  font-family: var(--font-pixel);
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  color: var(--pixel-gold);
+  text-align: center;
+  margin-bottom: 48px;
+  text-shadow: 4px 4px 0 var(--pixel-red);
+}
+
+.decorations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+}
+
+.decoration-card {
+  background: var(--pixel-black);
+  padding: 24px;
+  border: 4px solid var(--pixel-green);
+  position: relative;
+  transition: all 0.3s steps(3);
+}
+
+.decoration-card:hover {
+  transform: translateY(-8px);
+}
+
+.decoration-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.decoration-title {
+  font-family: var(--font-pixel);
+  font-size: 1.2rem;
+  color: var(--pixel-white);
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.decoration-description {
+  font-family: var(--font-pixel-secondary);
+  font-size: 1rem;
+  color: var(--pixel-white);
+  margin-bottom: 16px;
+  line-height: 1.4;
+}
+
+.decoration-difficulty {
+  font-family: var(--font-pixel);
+  font-size: 0.8rem;
+  margin-bottom: 16px;
+}
+
+.difficulty-easy { color: var(--pixel-green); }
+.difficulty-medium { color: var(--pixel-gold); }
+.difficulty-hard { color: var(--pixel-red); }
+
+.decoration-materials {
+  margin-bottom: 24px;
+}
+
+.decoration-materials h3 {
+  font-family: var(--font-pixel);
+  font-size: 0.9rem;
+  color: var(--pixel-gold);
+  margin-bottom: 8px;
+}
+
+.decoration-materials ul {
+  list-style: none;
+  padding: 0;
+}
+
+.decoration-materials li {
+  font-family: var(--font-pixel-secondary);
+  font-size: 1rem;
+  color: var(--pixel-white);
+  margin-bottom: 4px;
+  padding-left: 16px;
+  position: relative;
+}
+
+.decoration-materials li::before {
+  content: '>';
+  position: absolute;
+  left: 0;
+  color: var(--pixel-green);
+}
+
+@media (max-width: 768px) {
+  .pixel-decorations {
+    padding: 32px 16px;
+  }
+
+  .decorations-grid {
+    grid-template-columns: 1fr;
+  }
+} 

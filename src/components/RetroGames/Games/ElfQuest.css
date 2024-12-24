@@ -1,0 +1,181 @@
+.elf-quest-game {
+  width: 800px;
+  height: 400px;
+  position: relative;
+  overflow: hidden;
+  border: 4px solid var(--pixel-white);
+}
+
+/* Enhanced Workshop Background */
+.workshop-background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    #1a2980 0%,
+    #26d0ce 100%
+  );
+  overflow: hidden;
+}
+
+/* Snow Effect */
+.snow-layer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at center, white 2px, transparent 3px),
+    radial-gradient(circle at center, white 1px, transparent 2px);
+  background-size: 100px 100px, 50px 50px;
+  animation: snowfall 20s linear infinite;
+}
+
+/* Enhanced Workbench */
+.workbench {
+  position: absolute;
+  top: 50px;
+  left: 380px;
+  z-index: 2;
+}
+
+.workbench-glow {
+  font-size: 50px;
+  filter: drop-shadow(0 0 10px #ffd700);
+  animation: workbenchGlow 2s ease-in-out infinite;
+}
+
+/* Updated Elf Character */
+.elf {
+  position: absolute;
+  z-index: 3;
+  transition: transform 0.15s ease-out;
+}
+
+.elf-character {
+  font-size: 45px;
+  animation: elfFloat 1s ease-in-out infinite;
+}
+
+.elf-shadow {
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 10px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  filter: blur(3px);
+  animation: shadowPulse 1s ease-in-out infinite;
+}
+
+/* Enhanced Materials */
+.material-wrapper {
+  position: absolute;
+  z-index: 2;
+}
+
+.material {
+  font-size: 35px;
+  position: relative;
+  animation: materialBob 2s ease-in-out infinite;
+}
+
+.material-glow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, transparent 70%);
+  animation: glowPulse 2s ease-in-out infinite;
+}
+
+/* Enhanced Toys */
+.toy-wrapper {
+  position: absolute;
+  z-index: 2;
+}
+
+.toy {
+  font-size: 35px;
+  animation: toySpin 3s linear infinite;
+}
+
+.toy-sparkle {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, #fff 1px, transparent 3px);
+  animation: sparkle 2s linear infinite;
+}
+
+/* Crafting Particles */
+.craft-particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* Enhanced Animations */
+@keyframes elfFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+@keyframes shadowPulse {
+  0%, 100% { transform: translateX(-50%) scale(1); opacity: 0.3; }
+  50% { transform: translateX(-50%) scale(0.8); opacity: 0.2; }
+}
+
+@keyframes materialBob {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(5deg); }
+}
+
+@keyframes glowPulse {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.2); }
+}
+
+@keyframes toySpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes sparkle {
+  0% { transform: scale(0) rotate(0deg); opacity: 1; }
+  100% { transform: scale(2) rotate(180deg); opacity: 0; }
+}
+
+@keyframes workbenchGlow {
+  0%, 100% { filter: drop-shadow(0 0 10px #ffd700); }
+  50% { filter: drop-shadow(0 0 20px #ffd700); }
+}
+
+@keyframes snowfall {
+  0% { background-position: 0 0, 0 0; }
+  100% { background-position: 500px 500px, 250px 250px; }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 840px) {
+  .elf-quest-game {
+    width: 100%;
+    height: 300px;
+  }
+
+  .elf-character {
+    font-size: 35px;
+  }
+
+  .material,
+  .toy {
+    font-size: 28px;
+  }
+
+  .workbench-glow {
+    font-size: 40px;
+  }
+} 
